@@ -1,0 +1,25 @@
+```{r, echo=T}
+install.packages("graph")
+library(loon)
+library(PairViz)
+library(graph)
+df <- read.csv("data/train.csv")
+head(df)
+dim(df)
+```
+
+```{r}
+if (!require("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
+}
+
+BiocManager::install("graph")
+```
+
+
+```{r}
+# The navigation graph
+l_navgraph(data = df[, 1:4], color = "grey70", linkingGroup = "df")
+# A serial axes display
+l_serialaxes(df[, PairViz::eseq(4)], axesLayout = "parallel", linkingGroup = "df")
+```
