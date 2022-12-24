@@ -1,5 +1,5 @@
 ```{r, echo=T}
-install.packages("graph")
+# install.packages("graph")
 library(loon)
 library(PairViz)
 library(graph)
@@ -22,4 +22,12 @@ BiocManager::install("graph")
 l_navgraph(data = df[, 1:4], color = "grey70", linkingGroup = "df")
 # A serial axes display
 l_serialaxes(df[, PairViz::eseq(4)], axesLayout = "parallel", linkingGroup = "df")
+```
+
+```{r}
+
+# Change NaN Alley's to 'No'
+df[is.na(df["Alley"]), ]$Alley <- "No"
+
+table(df["LotFrontage"], useNA = "ifany")
 ```
