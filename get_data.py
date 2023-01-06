@@ -10,5 +10,5 @@ def get_data():
     features = train_init.drop(columns=["SalePrice"])
 
     # Set up training and testing data
-    x_train,x_test,y_train,y_test=train_test_split(features, labels, test_size=0.2, random_state=7)
+    raw_train, final_test, x_train,x_test,y_train,y_test=train_test_split(features, labels, test_size=0.2, random_state=7)
     return x_train,x_test,y_train,y_test
