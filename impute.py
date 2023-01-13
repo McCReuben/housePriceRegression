@@ -1,5 +1,6 @@
 from sklearn.impute import (IterativeImputer, KNNImputer, MissingIndicator,
                             SimpleImputer)
+from sklearn.linear_model import BayesianRidge, Lasso, LinearRegression, Ridge
 
 
 # Imputation
