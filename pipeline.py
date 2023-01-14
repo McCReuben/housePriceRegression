@@ -1,9 +1,19 @@
 import numpy as np
 import pandas as pd
+from IPython.display import Image
+from pandas_profiling import ProfileReport
 from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
+from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
+from sklearn.impute import (IterativeImputer, KNNImputer, MissingIndicator,
+                            SimpleImputer)
+from sklearn.linear_model import BayesianRidge, Lasso, LinearRegression, Ridge
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import (GridSearchCV, cross_validate,
+                                     train_test_split)
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
+from sklearn.preprocessing import (LabelEncoder, MinMaxScaler, OneHotEncoder,
+                                   OrdinalEncoder, StandardScaler)
+from xgboost import XGBRegressor
 
 final_test = pd.read_csv('data/test.csv')
 train_init = pd.read_csv('data/train.csv')
