@@ -52,4 +52,5 @@ full_preprocessor = ColumnTransformer(transformers=[
 
 
 x_train_clean = full_preprocessor.fit_transform(x_train)
+x_test_clean = full_preprocessor.fit_transform(x_test)
 
